@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -21,6 +22,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+mongoose.connect("mongodb://localhost/FoodDiary")
+  .then( () => console.log('Connected to DB') )
+  .catch( (e) => console.log('Error connecting to DB', e) ); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

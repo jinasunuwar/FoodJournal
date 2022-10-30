@@ -1,8 +1,12 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  font-family: 'Inconsolata', sans-serif !important;
+  background-image: url(/images/output-onlinepngtools.png);
 }
 
 a {
   color: #00B7FF;
 }
+
+
+
+
